@@ -1,0 +1,20 @@
+- name: Generar archivo de datos del alumno
+  hosts: localhost
+  become: yes
+  vars:
+    nombre: "Federico"       
+    apellido: "Farina"   
+    division: "311"   
+  
+  tasks:
+    - name: Crear el directorio para el archivo de datos
+      file:
+        path: /tmp/2do_parcial/alumno
+        state: directory
+        mode: '0755'
+
+    - name: Generar el archivo de datos del alumno
+      template:
+        src: templates/datos_alumno.txt.j2  
+        dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+

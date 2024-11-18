@@ -1,0 +1,17 @@
+- name: Generar archivo de datos del equipo
+  hosts: localhost
+  become: yes
+  gather_facts: yes  # Recolecta los hechos del sistema
+
+  tasks:
+    - name: Crear el directorio para el archivo de datos del equipo
+      file:
+        path: /tmp/2do_parcial/equipo
+        state: directory
+        mode: '0755'
+
+    - name: Generar el archivo de datos del equipo
+      template:
+        src: templates/datos_pc.txt.j2
+        dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+

@@ -1,0 +1,21 @@
+---
+# tasks file for 2do_parcial
+
+- name: Crear el directorio /tmp/2do_parcial
+    file:
+      path: /tmp/2do_parcial
+      state: directory
+      mode: '0755'
+
+  - name: Crear el directorio /tmp/2do_parcial/alumno
+    file:
+      path: /tmp/2do_parcial/alumno
+      state: directory
+      mode: '0755'
+
+  - name: Crear el directorio /tmp/2do_parcial/equipo
+    file:
+      path: /tmp/2do_parcial/equipo
+      state: directory
+      mode: '0755'
+
